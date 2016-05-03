@@ -1,0 +1,233 @@
+body, html {
+    font-size: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+}
+
+body {
+    background-image: url(../images/mainBackground.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/* General Styles */
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    color: #fff;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.6em;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.subTitleMain {
+    display: inline-block;
+}
+
+.subTitle {
+    font-size: 14px;
+    font-family: 'Lora', serif;
+    text-align: left;
+    padding: 0px;
+    color: #888888;
+    margin-top: 50px;
+}
+
+.textLeft {
+    text-align: left;
+    padding: 0px;
+}
+
+.fade {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:3s;
+    -moz-animation-duration:3s;
+    animation-duration:3s;
+}
+
+pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+
+
+.hover-zoom {
+    float: left !important;
+    margin: 0 !important;
+    -webkit-transition: all 0.5s ease-in-out !important;
+    transition: all 0.5s ease-in-out !important;
+    background-size: 110% !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-color: gray !important;
+    position: relative;
+}
+.hover-zoom:hover {
+    background-size: 120% !important;
+}
+
+/*General grid styles*/
+
+#gridFit {
+    width: 100%;
+    height: 100%;
+    min-height: auto;
+    background: rgb(37,42,48);
+}   
+
+.tilesContainer,
+.containerHover,
+.fadeBase,
+.containerText {
+    width: 100%;
+    height: 100%;						
+}
+
+.containerHover,
+.fadeBase { 
+    position:absolute;
+    top:0;
+    left:0;			
+}			
+
+.containerHover {	
+    -webkit-transition: all 600ms ease-out;
+    -moz-transition: all 600ms ease-out;
+    -o-transition: all 600ms ease-out;
+    transition: all 600ms ease-out;	
+    opacity:1;
+    cursor:pointer;		
+    z-index:100;
+}
+
+.containerHover:hover {
+    opacity:0;
+}
+
+.containerText {
+    color:#ffffff;
+    position:relative;
+    z-index:5;			
+    overflow:hidden;
+    padding: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.gridLinkBox {
+    position: relative !important;
+    max-width: 200px;
+    height: 35px;
+    margin: 0 auto;
+    font-size: 1em;
+    padding-top: 15px !important;
+    top: 40%;
+    border: 1px solid #ffffff;
+}			
+
+.fadeBase {
+    background-color:#111111;
+    opacity:0.9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90);					
+    z-index:0;
+}
+
+/* individual Tile Styles */
+
+#gridTiles .imageBoxy {
+    text-align:center;
+    float:left;
+    position:relative;
+    width: 33.33%;
+    height: 50%;
+    background-color:#222222;
+    z-index:0;
+}
+
+#gridTiles .containerImage1 {    
+    background-image: url('background.jpg');
+}
+
+#gridTiles .containerImage2 {
+    background-image: url('background.jpg');
+}
+
+#gridTiles .containerImage3 {
+    background-image: url('background.jpg');
+}
+
+#gridTiles .containerImage4 {
+    background-image: url('background.jpg');
+}
+
+#gridTiles .containerImage5 {
+    background-image: url('background.jpg');
+}
+
+#gridTiles .containerImage6 {
+    background-image: url('background.jpg');
+}
+
+
+@media (max-width: 767px){
+
+    /* Tiles Resize */
+
+    body #gridFit {
+        height: 100%;
+    }
+
+    body #gridTiles .imageBoxy {
+        width: 100% ;        
+        height: 150px ;
+        float: none ;
+    }
+
+    body .containerText .gridLinkBox {
+        top: 30%;
+    }
+}
